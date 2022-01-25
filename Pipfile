@@ -1,0 +1,20 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+flask = "*"
+flask-cors = "*"
+flask-mail = "*"
+pytest = "*"
+
+[dev-packages]
+pytest = "*"
+pytest-cov = "*"
+
+[scripts]
+dev = "bash -c \"export FLASK_ENV=development && flask run\""
+start = "waitress-serve --listen=*:5000 wsgi:application"
+test = "pytest ."
+coverage = "pytest --cov-report term-missing --cov=."
